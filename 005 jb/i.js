@@ -503,4 +503,111 @@ for (let i = 0; i < kiekSk; i++) {
     console.log(randNumFrom1to10(1, 10));
 }
 console.log("---5uzd lt---");
+function isEven(a) {
+    return (a % 2 === 0)
+}
+console.log(isEven(10));
+let min = 30; //("Min skaicius");
+let max = 40; //("max skaicius");
+let result = "Gauta ";
+for (let i = min; i <= max; i++) {
+    if (isEven(i)) {
+        result = result + ' ' + i;
+    }
+}
+console.log(result);
 
+console.log("---7uzd lt---");
+function getSum(arr) {
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+    }
+    return sum;
+}
+function getAvg(arr) {
+    let avg = 0;
+    avg = getSum(arr) / arr.length;
+    return avg;
+}
+function getMaxNumber(arr) {
+    let max = arr[0]; //2
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] > max) {// arr[3]=1, 1 > 9
+            max = arr[i]; //max=9
+        }
+        return max;
+    }
+}
+function getMinNumber(arr) {
+    let min = arr[0];
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] < min) {
+            min = arr[i];
+        }
+        return min;
+    }
+}
+let masyvasDuota = [2, 8, 9, 1];
+let veiksmas = 2;
+switch (veiksmas) {
+    case "1":
+        console.log(getSum(masyvasDuota)); //20
+        break;
+    case "2":
+        console.log(getAvg(masyvasDuota)); //5
+        break;
+    case "3":
+        console.log(getMaxNumber(masyvasDuota)); //9
+        break;
+    case "4":
+        console.log(getMinNumber(masyvasDuota)); //1;
+        break;
+    default:
+        console.log("out of ideas");
+}
+console.log(veiksmas);
+///nebaigtas tinkamai!!!
+console.log("---1uzd en---");
+let intOrString = reiksme => (Number.isInteger(reiksme)) ? "int" : "string";
+
+console.log(intOrString(5));
+console.log(intOrString("Sara"));
+console.log("----------------2uzd en------------------");
+function checkScope() {
+    let i = 'function scope';
+    if (true) {
+        let i = 'block scope';
+        console.log('Block scope i is: ', i);
+    }
+    console.log('Function scope i is: ', i);
+    return i;
+} console.log(checkScope());
+console.log("----------------3uzd en------------------");
+let magic = () => new Date();
+console.log(magic())
+
+console.log("----------------4uzd en------------------");
+
+const increment = (number, value = 1) => number + value;
+console.log(increment(2, 6));
+
+console.log("----------------5uzd en------------------");
+let calculateDogAge = (years) => "your doggie is " + years * 7 + "years old in dog years.";
+
+console.log(calculateDogAge(1));
+console.log(calculateDogAge(0.5));
+console.log(calculateDogAge(12));
+
+console.log("----------------6uzd en------------------");
+
+let numArgs = (...arr) => arr.length; // (...arr) suarchyvuoja i masyva
+console.log(numArgs(3, 2, "string", {}));
+
+console.log("----------------3uzd en---Masyvai ir funkcijos---------------");
+
+let contains = (masyvas2, kintamas) => (masyvas2 == kintamas) ? true : false;
+
+let kintamas = "BUM";
+let masyvas2 = [2, 3, "BUM", true];
+console.log(contains(masyvas2, kintamas));
